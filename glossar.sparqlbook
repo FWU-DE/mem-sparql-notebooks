@@ -1,0 +1,26 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Glossar",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "`PREFIX lp: <https://w3id.org/lehrplan/ontology/>`\n\n* `lp:LP_0030051` hat Beschreibung\n* `lp:LP_0000008` hat Teil\n* `lp:LP_0000026` hat Jahrgangsstufe\n* `lp:LP_0000029` von Bundesland\n* `lp:LP_0000537` hat Schulfach\n* `lp:LP_0000812` für Schulart\n* `lp:LP_0000812` hat Titel",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Nach Eigenschaften aus der Ontologie für eine bestimmte URI suchen:",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nWHERE {\n  lp:LP_0030056 ?p ?o\n}",
+    "metadata": {}
+  }
+]
