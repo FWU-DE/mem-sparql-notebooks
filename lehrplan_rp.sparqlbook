@@ -1,0 +1,86 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Lehrpläne von Rheinland-Pfalz",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "`PREFIX lp: <https://w3id.org/lehrplan/ontology/>`\n\n* `lp:LP_0000433` Lehrplan (RP)\n* `lp:LP_0030051` hat Beschreibung\n* `lp:LP_0000008` hat Teil\n* `lp:LP_0000026` hat Jahrgangsstufe\n* `lp:LP_0000029` von Bundesland\n* `lp:LP_0000537` hat Schulfach\n* `lp:LP_0000812` für Schulart\n* `lp:LP_0000812` hat Titel",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Wie viele Lehrpläne sind vorhanden?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?s)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 .\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Für wie viele Fächer sind Lehrpläne vorhanden?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?fach)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000537 ?fach .\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Für wie viele Schularten sind Lehrpläne vorhanden?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?schulart)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000812 ?schulart .\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000812 ?schulart .\n  ?schulart ?p ?o .\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Baumdarstellung eines Lehrplans",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  <http://localhost:8080/resource/128> rdf:type lp:LP_0000433 ;\n    lp:LP_0000008* ?teil .\n  }  ",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\nPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\nSELECT DISTINCT ?parent ?child\nFROM <http://mem.org/rlp>\nWHERE { \n  <http://localhost:8080/resource/128> rdf:type lp:LP_0000433 .\n  \n  # Get all parent-child relationships recursively to build a tree\n  <http://localhost:8080/resource/128> lp:LP_0000008* ?parent .\n  ?parent lp:LP_0000008 ?child .\n}\nORDER BY ?parent ?child\n\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "",
+    "metadata": {}
+  }
+]
