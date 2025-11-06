@@ -8,19 +8,187 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "`PREFIX lp: <https://w3id.org/lehrplan/ontology/>`\n\n* `lp:LP_0030051` hat Beschreibung\n* `lp:LP_0000008` hat Teil\n* `lp:LP_0000026` hat Jahrgangsstufe\n* `lp:LP_0000029` von Bundesland\n* `lp:LP_0000537` hat Schulfach\n* `lp:LP_0000812` für Schulart\n* `lp:LP_0000812` hat Titel",
+    "value": "\r\n## IRIs\r\n\r\n`PREFIX lp: <https://w3id.org/lehrplan/ontology/>`",
     "metadata": {}
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "Nach Eigenschaften aus der Ontologie für eine bestimmte URI suchen:",
+    "value": "### Properties\n\n* `lp:LP_0000812` hat Titel\n* `lp:LP_0030051` hat Beschreibung\n* `lp:LP_0000008` hat Teil\n* `lp:LP_0000029` von Bundesland\n* `lp:LP_0000026` hat Jahrgangsstufe\n* `lp:LP_0000537` hat Schulfach\n* `lp:LP_0000812` für Schulart\n* `lp:LP_0000840` hat Niveau\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Lehrpläne pro Bundesland\r\n\r\n- Lehrplan `lp:LP_0000438`\r\n* Bildungsplan (BW) `lp:LP_0000806` \r\n* Bildungsplan (HB) `lp:LP_0000821`\r\n* Bildungsplan (HH) `lp:LP_0000822`\r\n* Fachanforderung (SH) `lp:LP_0000824`\r\n* Kerncurriculum (HE) `lp:LP_0002184`\r\n* Kerncurriculum (NI) `lp:LP_0000823`\r\n* Kernlehrplan (NW) `lp:LP_0001000`\r\n* Lerhplan (RP) `lp:LP_0000433`\r\n* Lehrplan (SL) lp:LP_0000825 \r\n* Lehrplan (SN) lp:LP_0000818 \r\n* Lehrplan (ST) lp:LP_0000826 \r\n* Lehrplan (TH) lp:LP_0000820 \r\n* LehrplanPLUS (BY) lp:LP_0000819 \r\n* Rahmenlehrplan (BE) lp:LP_0030004 \r\n* Rahmenlehrplan (BB) lp:LP_0000807 \r\n* Rahmenplan (MV) lp:LP_0002164\r\n\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Bundesländer\r\n\r\n* Baden-Württemberg `lp:LP_3000049` \r\n* Bayern lp:LP_3000051 \r\n* Berlin lp:LP_3000048 \r\n* Brandenburg lp:LP_3000057 \r\n* Bremen lp:LP_3000056 \r\n* Hamburg lp:LP_3000045 \r\n* Hessen lp:LP_3000050  \r\n* Mecklenburg-Vorpommern lp:LP_3000052 \r\n* Niedersachsen lp:LP_3000043 \r\n* Nordrhein-Westfalen lp:LP_3000044 \r\n* Rheinland-Pfalz lp:LP_3000046 \r\n* Saarland lp:LP_3000055 \r\n* Sachsen lp:LP_3000047 \r\n* Sachsen-Anhalt lp:LP_3000053 \r\n* Schleswig-Holstein lp:LP_3000054 \r\n* Thüringen lp:LP_3000031 \r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Jahrgangsstufen\r\n\r\n- Jahrgangsstufe lp:LP_0000009\r\n\r\n* Jahrgangsstufe 1 lp:LP_2000001 \r\n* Jahrgangsstufe 2 lp:LP_2000002 \r\n* Jahrgangsstufe 3 lp:LP_2000003 \r\n* Jahrgangsstufe 4 lp:LP_2000004 \r\n* Jahrgangsstufe 5 lp:LP_2000005 \r\n* Jahrgangsstufe 6 lp:LP_2000006 \r\n* Jahrgangsstufe 7 lp:LP_2000006 \r\n* Jahrgangsstufe 8 lp:LP_2000008 \r\n* Jahrgangsstufe 9 lp:LP_2000009 \r\n* Jahrgangsstufe 10 lp:LP_2000010 \r\n* Jahrgangsstufe 11 lp:LP_2000011 \r\n* Jahrgangsstufe 12 lp:LP_2000012 \r\n* Jahrgangsstufe 13 lp:LP_2000013 \r\n* G8 Einführungsphase https://w3id.org/lehrplan/ontology/LP_0000051\r\n* G8 Qualifikationsphase https://w3id.org/lehrplan/ontology/LP_0000050\r\n* G9 Einführungsphase https://w3id.org/lehrplan/ontology/LP_0000055\r\n* G9 Qualifikationsphase https://w3id.org/lehrplan/ontology/LP_0000052",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Schulstufen\r\n\r\n- Schulstufe https://w3id.org/lehrplan/ontology/LP_0000020 \r\n\r\n* Primarbereich https://w3id.org/lehrplan/ontology/LP_0000036 \r\n* Sekundarbereich I https://w3id.org/lehrplan/ontology/LP_0000045\r\n* Sekundarbereich II https://w3id.org/lehrplan/ontology/LP_0000046 \r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Schularten\r\n\r\n- Schulart lp:LP_0000111\r\n\r\n* Grundschule lp:LP_0000114 \r\n* Wirtschaftsschule lp:LP_0000197 \r\n* Werkschule lp:LP_0000251 \r\n* Hauptschule lp:LP_0000140 \r\n* Mittelschule lp:LP_0000159 \r\n* Mittelstufenschule https://w3id.org/lehrplan/ontology/LP_0002005 \r\n* Verbundene Haupt- und Realschule https://w3id.org/lehrplan/ontology/LP_0002008 \r\n* Realschule https://w3id.org/lehrplan/ontology/LP_0000167 \r\n* Realschule plus https://w3id.org/lehrplan/ontology/LP_0000291 \r\n* Werkrealschule https://w3id.org/lehrplan/ontology/LP_0000218 \r\n* Regelschule https://w3id.org/lehrplan/ontology/LP_0000319 \r\n* Regionale Schule https://w3id.org/lehrplan/ontology/LP_0000367 \r\n* Oberschule https://w3id.org/lehrplan/ontology/LP_0000238 \r\n* Stadtteilschule https://w3id.org/lehrplan/ontology/LP_0000274 \r\n* Sekundarschule https://w3id.org/lehrplan/ontology/LP_0000382 \r\n* Integrierte Sekundarschule https://w3id.org/lehrplan/ontology/LP_0000121 \r\n* Gymnasium https://w3id.org/lehrplan/ontology/LP_0000122 \r\n* Gemeinschaftsschule https://w3id.org/lehrplan/ontology/LP_0000240 \r\n* Gesamtschule https://w3id.org/lehrplan/ontology/LP_0000240 \r\n* Integrierte Gesamtschule https://w3id.org/lehrplan/ontology/LP_0000292 \r\n* Kooperative Gesamtschule https://w3id.org/lehrplan/ontology/LP_0002012 \r\n* Förderschule https://w3id.org/lehrplan/ontology/LP_0030324\r\n* Klinik- und Krankenhausschule https://w3id.org/lehrplan/ontology/LP_0030338 ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Schulfächer\r\n\r\n- Schulfach `lp:LP_0000001`\r\n\r\n* ...",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Niveaus\r\n\r\n* Hauptschulniveau https://w3id.org/lehrplan/ontology/LP_0000834\r\n* Realschulniveau https://w3id.org/lehrplan/ontology/LP_0000832\r\n* Gymnasialniveau Sek I https://w3id.org/lehrplan/ontology/LP_0000069\r\n* Gymnasialniveau Sek II https://w3id.org/lehrplan/ontology/LP_0000835\r\n* Grundkursniveau https://w3id.org/lehrplan/ontology/LP_0030338\r\n* Leistungskursniveau https://w3id.org/lehrplan/ontology/LP_0000531",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Curriculare Elemente\r\n\r\n- Curriculares Element https://w3id.org/lehrplan/ontology/LP_0000261\r\n\r\n* CE-Fragment https://w3id.org/lehrplan/ontology/LP_0001015\r\n* CE-Bereich https://w3id.org/lehrplan/ontology/LP_0000349\r\n* CE-Kompetenzspezifikation https://w3id.org/lehrplan/ontology/LP_0000263\r\n* CE-Lerninhalt https://w3id.org/lehrplan/ontology/LP_0000332 \r\n* CE-Hinweis https://w3id.org/lehrplan/ontology/LP_0000852",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Curriculare Elemente der Bundesländer\r\n\r\n* Element (BB) https://w3id.org/lehrplan/ontology/LP_0000441 \r\n* Element (BE) https://w3id.org/lehrplan/ontology/LP_0001441\r\n* Element (BW) https://w3id.org/lehrplan/ontology/LP_0002051\r\n* Element (BY) https://w3id.org/lehrplan/ontology/LP_0000434\r\n* Element (HB) https://w3id.org/lehrplan/ontology/LP_0002118\r\n* Element (HE) https://w3id.org/lehrplan/ontology/LP_0002076\r\n* Element (HH) https://w3id.org/lehrplan/ontology/LP_0000426\r\n* Element (MV) https://w3id.org/lehrplan/ontology/LP_0002080\r\n* Element (NI) https://w3id.org/lehrplan/ontology/LP_0002101\r\n* Element (NW) https://w3id.org/lehrplan/ontology/LP_0002085\r\n* Element (RP) https://w3id.org/lehrplan/ontology/LP_0000342\r\n* Element (SH) https://w3id.org/lehrplan/ontology/LP_0002103\r\n* Element (SL) https://w3id.org/lehrplan/ontology/LP_0002102\r\n* Element (SN) https://w3id.org/lehrplan/ontology/LP_0002089\r\n* Element (ST) https://w3id.org/lehrplan/ontology/LP_0002093\r\n* Element (TH) https://w3id.org/lehrplan/ontology/LP_0002097\r\n* Element (Bista) https://w3id.org/lehrplan/ontology/LP_0000536",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Abfragen",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Nach Eigenschaften aus der Ontologie für eine bestimmte URI suchen:",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
     "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nWHERE {\n  lp:LP_0030056 ?p ?o\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### alle Triples anzeigen lassen, die den Lehrplan (RP) als Objekt haben",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct * where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000433> .\r\n} LIMIT 100\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Anzahl nennen von Lehrplänen in RP",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct count(*) where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000433> . # ?s ?p ‘Lehrplan (RP)‘\r\n?s <https://w3id.org/lehrplan/ontology/LP_00000029> <https://w3id.org/lehrplan/ontology/LP_30000046> . # ?s ‚von Bundesland‘ ‚Rheinland-Pfalz‘\r\n} LIMIT 100\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alles, das mit einem Lehrplan zu tun hat (und was es mit dem Lehrplan zu tun hat) und von einem Bundesland ist und ein Schulfach hat. Und zeige mir die labels von den Schulfächern und den Bundesländern (?)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct * where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000438> . # ?s ?p ‘Lehrplan’\r\n?s <https://w3id.org/lehrplan/ontology/LP_00000029> ?bl . # ?s ‚von Bundesland‘ ?bl\r\n?s <https://w3id.org/lehrplan/ontology/LP_00000537> ?schulfach . # ?s ‚hat Schulfach‘ ?schulfach .\r\n?schulfach <http://www.w3.org/2000/01/rdf-schema#label> ?sflabel .\r\n?bl <http://www.w3.org/2000/01/rdf-schema#label> ?bllabel . }\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alles, das mit einem Lehrplan zu tun hat (und was es mit dem Lehrplan zu tun hat) und von dem Bundesland RP ist und ein Schulfach hat. Und zeige mir das label von dem Schulfach. (?)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct * where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000438> .\r\n ?s <https://w3id.org/lehrplan/ontology/LP_00000029> <https://w3id.org/lehrplan/ontology/LP_30000046> .\r\n ?s <https://w3id.org/lehrplan/ontology/LP_00000537> ?schulfach .\r\n ?schulfach <http://www.w3.org/2000/01/rdf-schema#label> ?sflabel .\r\n} LIMIT 100\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### ?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct ?s ?lplabel ?sflabel ?bllabel where {\r\n?s <http://www.w3.org/2000/01/rdf-schema#label> ?lplabel .\r\n ?s ?p <https://w3id.org/lehrplan/ontology/LP_00000438> .\r\n ?s <https://w3id.org/lehrplan/ontology/LP_00000029> ?bl .\r\n ?s <https://w3id.org/lehrplan/ontology/LP_00000537> ?schulfach .\r\n ?schulfach <http://www.w3.org/2000/01/rdf-schema#label> ?sflabel .\r\n ?bl <http://www.w3.org/2000/01/rdf-schema#label> ?bllabel .\r\n FILTER REGEX( ?sflabel, \"deutsch\", \"i\" ) .\r\n } LIMIT 100\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Alle Fächer eines Bundeslandes",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?Schulfach\r\nWHERE {\r\n?Schulfach a lp:LP_0000001 .\r\n?Schulfach lp:LP_0000029 lp:LP_3000047 .\r\n}\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Alle Lehrpläne eines Bundeslandes",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?Lehrplan ?Bundesland\r\nWHERE {\r\n?Lehrplan a lp:LP_0000438 .\r\n?Lehrplan lp:LP_0000029 ?Bundesland .\r\n}\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Alle Lehrpläne in denen der Begriff “X” vorkommt",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?Lehrplan ?Bundesland\r\nWHERE {\r\n?Lehrplan a lp:LP_0000438 .\r\n? …\r\n}\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "Sammlung Abfragen:\r\n\r\n•\tZeige mir welche Verknüpfung zwischen Element X und Element Y besteht.\r\n•\tZeige mir die Unterschiede der Kompetenzspezifikationen zwischen den verschiedenen Schularten der 7. Klasse in Mathematik im Saarland.\r\n•\tZeige mir wie die Niveaustufen in Berlin/Brandenburg mit den Jahrgangsstufen zusammenhängen. \r\n•\tIch möchte sehen, welche Jahrgangsstufen die Niveaustufe C in Berlin im Gymnasium umfasst.\r\n•\tWelcher Bereich aus Hamburg entspricht einem Element aus Bremen?\r\n•\tAnhand welcher Lerninhalte kann ich eine Kompetenz erlernen?\r\n•\tWelche Kompetenzen werden benötigt, um Kompetenz X zu erlernen?\r\n•\tWie verläuft die Progression im Fach Mathematik in den verschiedenen Schularten in Hessen?\r\n•\tIn welchen Fächern wird in BW das Querschnittsthema \"Nachhaltige Entwicklung\" gelistet?\r\n•\tWelche zusätzlichen Kompetenzen müssen erlangt werden im Leistungskurs Physik gegenüber dem Grundkurs Physik in Sachsen-Anhalt?\r\n•\tIch möchte alle Kompetenzbereiche in dem Fach Mathe in Bayern sehen.\r\n•\tIch möchte alle Kompetenzspezifikationen der Kompetenzen sehen, die in Hessen unter dem Kompetenzbereich \"Mathematisch modellieren\" in der Jahrgangsstufe 7 erworben werden müssen.\r\n•\tIch möchte sehen, welche Lerninhalte in der 5. Klasse in dem Fach Biologie in NRW im Unterricht gelehrt werden sollen.\r\n•\tIch möchte alle Kompetenzbereiche in Französisch von der Primarstufe über die Sek I zur Sek II nach Jahrgangsstufe im Saarland sehen.\r\n•\tIch möchte alle Kompetenzspezifikationen des Kompetenzbereichs „Lesen“ des Fachs Deutsch in der Primarstufe sehen.\r\n•\tIch möchte in Hamburg die unterschiedlichen Kompetenzspezifikationen in Biologie nach Bildungsgang in der 8. Jahrgangsstufe sehen.\r\n•\tIch möchte wissen, welche Kompetenzspezifikationen in Englisch von Jahrgangsstufe 1-9 in Baden-Württemberg vorkommen aber in Brandenburg nicht.\r\n•\tIch möchte Lerninhalte nach Sprachniveaus (Gemeinsamer europäischer Referenzrahmen für Sprachen) filtern können.\r\n•\tIch möchte abbilden, welche Kompetenzen in Mathematik im Primarbereich erlernt werden und wie diese sich in der Sek I je nach Bildungsgang weiterentwickeln.\r\n",
     "metadata": {}
   }
 ]

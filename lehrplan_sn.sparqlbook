@@ -1,0 +1,86 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "# Lehrpläne von Sachsen",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "`PREFIX lp: <https://w3id.org/lehrplan/ontology/>`\r\n\r\n* `lp:LP_0000818` Lehrplan (SN)\r\n* `lp:LP_0030051` hat Beschreibung\r\n* `lp:LP_0000008` hat Teil\r\n* `lp:LP_0000026` hat Jahrgangsstufe\r\n* `lp:LP_0000029` von Bundesland\r\n* `lp:LP_0000537` hat Schulfach\r\n* `lp:LP_0000812` für Schulart\r\n* `lp:LP_0000812` hat Titel",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "SELECT * \r\nWHERE {\r\n    ?s ?p ?\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Zeig mir alle Lehrpläne die vom Bundesland Sachsen sind\r\n- Lehrplan: https://w3id.org/lehrplan/ontology/LP_0000438\r\n- von Bundesland: https://w3id.org/lehrplan/ontology/LP_0000029\r\n- Sachsen: https://w3id.org/lehrplan/ontology/LP_3000047\r\n\r\n-> Lehrplandaten werden nicht gefunden (reasoning funktioniert nicht)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT * \r\nWHERE {\r\n    ?s a lp:LP_0000438 .\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Zeig mir alles von type Lehrplan (SN)\r\n\r\nLehrplan (SN): https://w3id.org/lehrplan/ontology/LP_0000818\r\n\r\n-> Daten werden gefunden",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?label\r\nWHERE {\r\n    ?s a lp:LP_0000818 .\r\n    ?s rdfs:label ?label .\r\n}\r\nLIMIT 10\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Wie viele Lehrpläne aus Sachsen sind in dem triple store?\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT COUNT(?label)\r\nWHERE {\r\n    ?s a lp:LP_0000818 .\r\n    ?s rdfs:label ?label .\r\n}\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Welchen Schularten sind die Lehrpläne zugeordnet?\r\n(Schulart: https://w3id.org/lehrplan/ontology/LP_0000111)\r\nfür Schulart: https://w3id.org/lehrplan/ontology/LP_0000812",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT DISTINCT ?o ?labelo\r\nWHERE {\r\n    ?s a lp:LP_0000818 .\r\n    ?s rdfs:label ?labels .\r\n    ?s lp:LP_0000812 ?o .\r\n    OPTIONAL{?o rdfs:label ?labelo .}\r\n}",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?s\r\nWHERE {\r\n    ?s a lp:LP_0000122 .\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## alle Triples anzeigen lassen, die den **Lehrplan (RP)** als Objekt haben",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "select distinct * where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000433> .\r\n} LIMIT 100\r\n",
+    "metadata": {}
+  }
+]
