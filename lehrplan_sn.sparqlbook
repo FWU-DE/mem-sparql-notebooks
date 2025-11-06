@@ -14,7 +14,19 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "SELECT * \r\nWHERE {\r\n    ?s ?p ?\r\n}\r\nLIMIT 10",
+    "value": "SELECT * \r\nWHERE {\r\n    ?s ?p ?o\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Wie viele Lehrpläne sind vorhanden?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?s)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000818 .\n  }",
     "metadata": {}
   },
   {
@@ -69,18 +81,6 @@
     "kind": 2,
     "language": "sparql",
     "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?s\r\nWHERE {\r\n    ?s a lp:LP_0000122 .\r\n}\r\nLIMIT 10",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## alle Triples anzeigen lassen, die den **Lehrplan (RP)** als Objekt haben",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "sparql",
-    "value": "select distinct * where {\r\n?s ?p <https://w3id.org/lehrplan/ontology/LP_00000433> .\r\n} LIMIT 100\r\n",
     "metadata": {}
   }
 ]
