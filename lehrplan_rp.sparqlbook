@@ -20,7 +20,7 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?s)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 .\n  }",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?s)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 . # ?s von Typ Lehrplan (RP)\n  }",
     "metadata": {}
   },
   {
@@ -32,7 +32,7 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?fach)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000537 ?fach .\n  }",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?fach)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ; # ?s von Typ Lehrplan (RP)\n      lp:LP_0000537 ?fach . # hat Schulfach ?fach\n  }",
     "metadata": {}
   },
   {
@@ -44,13 +44,13 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?schulart)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000812 ?schulart .\n  }",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?schulart)\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ; # ?s von Typ Lehrplan (RP)\n      lp:LP_0000812 ?schulart . # für Schulart ?schulart\n  }",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ;\n      lp:LP_0000812 ?schulart .\n  ?schulart ?p ?o .\n  }",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  ?s rdf:type lp:LP_0000433 ; # ?s von Typ Lehrplan (RP)\n      lp:LP_0000812 ?schulart . # für Schulart ?schulart\n  ?schulart ?p ?o .\n  }",
     "metadata": {}
   },
   {
@@ -68,7 +68,7 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  <http://localhost:8080/resource/128> rdf:type lp:LP_0000433 ;\n    lp:LP_0000008* ?teil .\n  }  ",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT *\n\nFROM <http://mem.org/rlp>\nWHERE { \n  <http://localhost:8080/resource/128> rdf:type lp:LP_0000433 ; \n    lp:LP_0000008* ?teil . # hat Teil ?teil\n  }  ",
     "metadata": {}
   },
   {

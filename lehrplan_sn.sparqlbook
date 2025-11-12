@@ -26,19 +26,7 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Zeige mir alle Lehrpläne die von Bundesland Sachsen sind:\r\n\r\n-> Lehrplandaten werden nicht gefunden (reasoning funktioniert nicht)",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT * \r\nWHERE {\r\n    ?s a lp:LP_0000438 . # ?s von Typ Lehrplan\r\n    ?s lp:LP_0000029 lp:LP_3000047 . # ?s von Bundesland Sachsen\r\n}\r\nLIMIT 10",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "## Zeig mir alles von type Lehrplan (SN)\r\n\r\n-> Daten werden gefunden",
+    "value": "## Zeig mir alles von type Lehrplan (SN):\r\n\r\n-> Daten werden gefunden",
     "metadata": {}
   },
   {
@@ -50,13 +38,31 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "## Welchen Schularten sind die Lehrpläne zugeordnet?",
+    "value": "## Zeige mir alle Lehrpläne, die von Bundesland Sachsen sind:\r\n\r\n-> Lehrplandaten werden nicht gefunden (reasoning funktioniert nicht)",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT * \r\nWHERE {\r\n    ?s a lp:LP_0000438 . # ?s von Typ Lehrplan\r\n    ?s lp:LP_0000029 lp:LP_3000047 . # ?s von Bundesland Sachsen\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Für wie viele Fächer sind Lehrpläne vorhanden?",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?fach)\nWHERE { \n  ?s rdf:type lp:LP_0000818 ; # ?s von Typ Lehrplan (SN)\n      lp:LP_0000537 ?fach . # hat Schulfach ?fach\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Welchen Schularten sind die Lehrpläne zugeordnet?",
     "metadata": {}
   },
   {
@@ -68,13 +74,37 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### Zeige mir die Lernbereiche in Sachsen:",
+    "value": "## Für wie viele Schularten sind Lehrpläne vorhanden?",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT *\r\nWHERE {\r\n    ?lehrplan a lp:LP_0000818 . # ?s von Typ Lehrplan (SN)\r\n    ?s ?p lp:LP_0002113 .\r\n    ?s rdfs:label ?label\r\n}\r\nLIMIT 10",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\n\nSELECT COUNT(DISTINCT ?schulart)\nWHERE { \n  ?s rdf:type lp:LP_0000818 ; # ?s von Typ Lehrplan (SN)\n      lp:LP_0000812 ?schulart . # für Schulart ?schulart\n  }",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alle Lehrpläne aus Sachsen und ihre Schulfächer:\r\n\r\n-> keine Ergebnisse",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT distinct * \r\nWHERE {\r\n?s a lp:LP_00000818 . # ?s ?p ‘Lehrplan (SN)’\r\n?s lp:LP_00000537 ?schulfach . # ?s ‚hat Schulfach‘ ?schulfach .\r\n?schulfach rdfs:label ?sflabel . \r\n}\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "## Zeige mir die Lernbereiche in Sachsen:\r\n\r\n-> es kommen Resultate, aber ich bin mir nicht sicher, ob das die richtigen sind\r\n(Hatte auch getestet mit \"CE-Bereich\" -> reasoning scheint hier nicht zu funktionieren)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT *\r\nWHERE {\r\n    ?lehrplan a lp:LP_0000818 . # ?s von Typ Lehrplan (SN)\r\n    ?s ?p lp:LP_0002113 . # ?s ?p Lernbereich (SN)\r\n    ?s rdfs:label ?label\r\n}\r\nLIMIT 10",
     "metadata": {}
   }
 ]

@@ -78,9 +78,15 @@
     "metadata": {}
   },
   {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Vorlage:",
+    "metadata": {}
+  },
+  {
     "kind": 2,
     "language": "sparql",
-    "value": "SELECT * \r\nWHERE {\r\n    ?s ?p ?o\r\n}\r\nLIMIT 10",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT * \r\nWHERE {\r\n    ?s ?p ?o\r\n}\r\nLIMIT 10",
     "metadata": {}
   },
   {
@@ -104,7 +110,19 @@
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?schulart\r\nWHERE {\r\n    ?s a lp:LP_0000111 .\r\n    ?s rdfs:label ?schulart .\r\n}\r\nLIMIT 10",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?schulart\r\nWHERE {\r\n    ?s a lp:LP_0000111 . # ?s von Typ Schulart\r\n    ?s rdfs:label ?schulart .\r\n}\r\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alle Fächer:",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?s ?Schulfach\r\nWHERE {\r\n    ?s a lp:LP_0000001 . # ?s von Typ Schulfach\r\n    ?s rdfs:label ?Schulfach\r\n}\r\n",
     "metadata": {}
   },
   {
@@ -146,25 +164,13 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### Zeige mir alle Fächer:",
+    "value": "### Zeige mir alle Lehrpläne, in denen der Begriff “xy” vorkommt:\r\n-> ist das richtig so?",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?s ?Schulfach\r\nWHERE {\r\n    ?s a lp:LP_0000001 . # ?s von Typ Schulfach\r\n    ?s rdfs:label ?Schulfach\r\n}\r\n",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
-    "value": "### Zeige mir alle Lehrpläne, in denen der Begriff “xy” vorkommt:\r\n-> funktioniert noch nicht",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?Lehrplan ?Bundesland\r\nWHERE {\r\n?Lehrplan a lp:LP_0000438 . # ?Lehrplan von Typ Lehrplan\r\n? … # \r\n}\r\n",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT ?Lehrplan ?Bundesland\r\nWHERE {\r\n?Lehrplan a lp:LP_0000438 . # ?Lehrplan von Typ Lehrplan\r\n?Lehrplan ?p ?o\r\nFILTER(regex(?o, \"xy\", \"i\"))\r\n}\r\n",
     "metadata": {}
   },
   {
@@ -180,33 +186,51 @@
     "metadata": {}
   },
   {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alles, das mit einem Lehrplan zu tun hat (und was es mit dem Lehrplan zu tun hat) und von dem Bundesland RP ist und ein Schulfach hat. Und zeige mir das label von dem Schulfach.",
+    "metadata": {}
+  },
+  {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT *\r\nWHERE {\r\n    lp:LP_0002049 ?p lp:LP_0000434 .\r\n}",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT distinct * \r\nWHERE {\r\n    ?s ?p lp:LP_00000438 . # ?s ?p Lehrplan\r\n    ?s lp:LP_00000029 lp:LP_30000046 . # ?s von Bundesland Rheinland-Pflaz\r\n    ?s lp:LP_00000537 ?schulfach . # ?s hat Schulfach ?schulfach\r\n    ?schulfach rdfs:label ?sflabel .\r\n} \r\nLIMIT 10\r\n",
     "metadata": {}
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### Zeige mir alles, das mit einem Lehrplan zu tun hat (und was es mit dem Lehrplan zu tun hat) und von dem Bundesland RP ist und ein Schulfach hat. Und zeige mir das label von dem Schulfach. (?)",
+    "value": "### Welche Beziehung besteht zwischen Kompetenzerwartungen in BY und Elementen aus BY?\r\n\r\n-> kein Ergebniss (müsste ja die subclass sein)",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT distinct * \r\nWHERE {\r\n    ?s ?p lp:LP_00000438 .\r\n    ?s lp:LP_00000029 lp:LP_30000046 .\r\n    ?s lp:LP_00000537 ?schulfach .\r\n    ?schulfach rdfs:label ?sflabel .\r\n} \r\nLIMIT 100\r\n",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT *\r\nWHERE {\r\n    lp:LP_0002049 ?p lp:LP_0000434 . # Kompetenzerwartung (BY) ?p Element (BY)\r\n}",
     "metadata": {}
   },
   {
     "kind": 1,
     "language": "markdown",
-    "value": "### ?",
+    "value": "### Zeige mir alle Lehrpläne und von welchem BL sie sind, die das Fach \"Deutsch\" haben:\r\n\r\n(nicht sicher, ob das so korrekt ist)",
     "metadata": {}
   },
   {
     "kind": 2,
     "language": "sparql",
-    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT distinct ?s ?lplabel ?sflabel ?bllabel \r\nWHERE {\r\n?s <http://www.w3.org/2000/01/rdf-schema#label> ?lplabel .\r\n?s ?p lp:LP_00000438 .\r\n?s lp:LP_00000029 ?bl .\r\n?s lp:LP_00000537 ?schulfach .\r\n?schulfach <http://www.w3.org/2000/01/rdf-schema#label> ?sflabel .\r\n?bl <http://www.w3.org/2000/01/rdf-schema#label> ?bllabel .\r\nFILTER REGEX( ?sflabel, \"deutsch\", \"i\" ) .\r\n} \r\nLIMIT 100\r\n",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT distinct ?s ?lplabel ?sflabel ?bllabel \r\nWHERE {\r\n?s rdfs:label ?lplabel .\r\n?s ?p lp:LP_00000438 . # Lehrplan\r\n?s lp:LP_00000029 ?bl . # von Bundesland\r\n?s lp:LP_00000537 ?schulfach . # hat Schulfach\r\n?schulfach rdfs:label ?sflabel .\r\n?bl rdfs:label ?bllabel .\r\nFILTER(regex(?sflabel, \"Deutsch\", \"i\")) . # ?sflabel ist \"Deutsch\" -> ist das so korrekt?\r\n} \r\nLIMIT 10\r\n",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Zeige mir alle Lernbereiche in Fach Mathematik für die Jahrgangsstufe 5 in Bayern:",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX lp: <https://w3id.org/lehrplan/ontology/>\r\n\r\nSELECT *\r\nWHERE {\r\n    ?s a lp:LP_0000819 . # ?s ist Typ LehrplanPLUS (BY)\r\n    ?s lp:LP_0000008 ?lernbereich . # ?s hat Teil ?lernbereich \r\n    ?s lp:LP_0000537 <http://w3id.org/kim/schulfaecher/s1017> . # ?s hat Schulfach Mathematik (KIM-Schulfach)\r\n    ?s lp:LP_0000026 lp:LP_2000005 . # ?s hat Jahrgangsstufe Jahrgangsstufe 5\r\n    ?s rdfs:lable ?lplabel .\r\n    ?lernbereich rdfs:lable ?lernbereichlabel .\r\n}",
     "metadata": {}
   },
   {
